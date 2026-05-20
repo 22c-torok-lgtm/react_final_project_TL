@@ -50,6 +50,16 @@
   box-shadow: 0 0 0 3px rgba(79, 140, 255, 0.15);
 }
 
+.nextto{
+    padding: 11px 12px;
+  border-radius: 8px;
+  border: 1px solid #d8d8d8;
+  font-size: 14px;
+  background: #fafafa;
+  transition: all 0.2s ease;
+
+}
+
 .textarea {
   min-height: 90px;
   resize: vertical;
