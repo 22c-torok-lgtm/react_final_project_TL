@@ -52,28 +52,71 @@ import styles from "./DinoForm.module.css"
                   />
                 </div>
 
-                <div className={styles.formGroup}>
-                  <label className={styles.label} htmlFor="weight">
-                    Súly
-                  </label>
-                  <label className={styles.label}> <input className={styles.nextto} type="text" id="weight"/> KG</label>
-                </div>
+                <div className={styles.smallFields}>
+                  <div className={styles.formGroup}>
+                    <label className={styles.label} htmlFor="sex">
+                      Nem
+                    </label>
+                    <input className={styles.nextto} type="text" id="sex"/>
+                  </div>
 
-                <div className={styles.formGroup}>
-                  <label className={styles.label} htmlFor="hight">
-                    Magasság
-                  </label>
-                  <label className={styles.label}> <input className={styles.input} type="text" id="hight"/> M</label>
+                  <div className={styles.formGroup}>
+                    <label className={styles.label} htmlFor="age">
+                      Kor
+                    </label>
+                    <input className={styles.nextto} type="number" id="age" placeholder="év"/>
+                  </div>
+
+                  <div className={styles.formGroup}>
+                    <label className={styles.label} htmlFor="ageing">
+                      Élettartalma
+                    </label>
+                    <input className={styles.nextto} type="text" id="ageing" placeholder="év"/>
+                  </div>
+
+                  <div className={styles.formGroup}>
+                    <label className={styles.label} htmlFor="food">
+                      Táplálkozás
+                    </label>
+                    <input className={styles.nextto} type="text" id="food"/>
+                  </div>
+
+                  <div className={styles.formGroup}>
+                    <label className={styles.label} htmlFor="amount">
+                      Táplálék Mennyisége
+                    </label>
+                    <input className={styles.nextto} type="text" id="amount" placeholder="KG"/>
+                  </div>
+
+                  <div className={styles.formGroup}>
+                    <label className={styles.label} htmlFor="liveplace">
+                      Élőhelye
+                    </label>
+                    <input className={styles.nextto} type="text" id="liveplace"/>
+                  </div>
+
+                  <div className={styles.formGroup}>
+                    <label className={styles.label} htmlFor="weight">
+                      Súly
+                    </label>
+                    <input className={styles.nextto} type="text" id="weight" placeholder="KG"/>
+                  </div>
+
+                  <div className={styles.formGroup}>
+                    <label className={styles.label} htmlFor="height">
+                      Magasság
+                    </label>
+                    <input className={styles.nextto} type="text" id="height" placeholder="M"/>
+                  </div>
+
+                  <div className={styles.formGroup}>
+                    <label className={styles.label} htmlFor="length">
+                      Hossz
+                    </label>
+                    <input className={styles.nextto} type="text" id="length" placeholder="M"/>
+                  </div>
 
                 </div>
-                
-                <div className={styles.formGroup}>
-                  <label className={styles.label} htmlFor="lenght">
-                    Hossz
-                  </label>
-                  <label className={styles.label}> <input className={styles.input} type="text" id="lenght"/> M</label>
-                </div>
-
                 <div className={styles.formGroup}>
                   <label className={styles.label} htmlFor="notes">
                     Megjegyzések
