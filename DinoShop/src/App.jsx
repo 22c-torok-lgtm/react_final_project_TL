@@ -1,14 +1,9 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 import './App.css'
 import DinoForm from './components/DinoForm'
-import DinoItem from './components/DinoItem'
 import DinoList from './components/DinoList'
 import NavBar from './components/NavBar'
 import { Route, Routes } from 'react-router-dom'
-import ProtectedRoute from './components/ProtectedRoute';
 import Login from "./components/Login"
 import { AuthProvider } from './context/loginContext';
 
@@ -35,11 +30,6 @@ function App() {
       console.error('Hiba:', error);
     }
   };
-
-
-  const deleteDino = (id) => {
-    getDinoData();
-  }
 
   return (
     <>

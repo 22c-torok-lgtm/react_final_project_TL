@@ -1,25 +1,48 @@
 .navbar {
-    position: absolute;
+    position: fixed;
+    top: 0;
     left: 0;
-    top: 1rem;
+    right: 0;
+    z-index: 1000;
+    background: linear-gradient(90deg, #2d5016 0%, #4a7c2c 50%, #6fa632 100%);
+    padding: 0.8rem 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border-bottom: 4px solid #ff8c42;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
 }
 
 .navbar>a {
-    padding-left: 1rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
 }
 
 .link{
-    color:rgb(6, 141, 107);
-    font-size: 1rem;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-family: 'Impact', sans-serif;
 }
 
 .link:hover{
-    color: rgb(0, 73, 55);
+    color: #ffd700;
+    transform: scale(1.1);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .active, .active:hover{
-    color:rgb(0, 73, 55);
-    font-weight: 600;  
-    font-size: 1.5rem;  
+    color: #ffd700;
+    font-weight: 700;  
+    font-size: 1.3rem;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+    animation: bounce 0.3s ease;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
 }
 
