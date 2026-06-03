@@ -7,8 +7,7 @@ const NavBar = () => {
     return (
         <nav className={classes.navbar}>
             <NavLink to='/' className={({isActive}) => isActive ? classes.active : classes.link}>Dino</NavLink>
-            <NavLink to='/form' className={({isActive}) => isActive ? classes.active : classes.link}>Új Dino</NavLink>
-            {/* {isLogged && <NavLink to='/form' className={({isActive}) => isActive ? classes.active : classes.link}>Új Dino</NavLink>} */}
+            {isLogged && <NavLink to='/form' className={({isActive}) => isActive ? classes.active : classes.link}>Új Dino</NavLink>}
             {!isLogged ? (<NavLink to='/login' className={({isActive}) => isActive ? classes.active : classes.link}>Bejelentkezés</NavLink>) : (<button onClick={logout} className={classes.link}>Kijelentkezés</button>)}
         </nav>
     )

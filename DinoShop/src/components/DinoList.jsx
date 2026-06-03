@@ -1,12 +1,12 @@
 import DinoItem from "./DinoItem";
 
-const DinoList = ({ Dinos = [], deleteDino }) => {
+const DinoList = ({ dinos = [], deleteDino }) => {
   return (
     <div className="dino-list">
-      {Dinos.length === 0 ? (
+      {dinos.length === 0 ? (
         <h2>Nincs megjeleníthető dínó</h2>
       ) : (
-        Dinos.map((dino) => (
+        dinos.map((dino) => (
           <DinoItem
             key={dino.id}
             dino={dino}

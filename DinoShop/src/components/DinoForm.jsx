@@ -13,13 +13,13 @@ const DinoForm = ({ sendDataToApp }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const DinoName = DinoNameRef.current.value.trim();
-    const URL = URLRef.current.value.trim();
-    const DinoPrice = DinoPriceRef.current.value;
-    const DinoStock = DinoStockRef.current.value;
-    const notes = notesRef.current.value.trim();
+    const name = DinoNameRef.current.value.trim();
+    const img_url = URLRef.current.value.trim();
+    const price = DinoPriceRef.current.value;
+    const stock = DinoStockRef.current.value;
+    const description = notesRef.current.value.trim();
 
-    if (!DinoName || !URL || !DinoPrice || !DinoStock) {
+    if (!name || !img_url || !price || !stock) {
       Swal.fire({
         icon: "error",
         title: "Hiba",
@@ -44,14 +44,14 @@ const DinoForm = ({ sendDataToApp }) => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
+          Authorization: `${token}`,
         },
         body: JSON.stringify({
-          DinoName,
-          URL,
-          DinoPrice: Number(DinoPrice),
-          DinoStock: Number(DinoStock),
-          notes,
+          name,
+          img_url,
+          price: Number(price),
+          stock: Number(stock),
+          description,
         }),
       });
 
@@ -123,10 +123,11 @@ const DinoForm = ({ sendDataToApp }) => {
           </div>
 
           <div className={styles.formGroup}>
-            <label className={styles.label} htmlFor="price">
+            <label className={styles.label} htmlFor="price" >
               Dinoszaurusz Ára
             </label>
             <input
+            placeholder="Millió"
               className={styles.input}
               type="number"
               id="price"

@@ -41,8 +41,6 @@ const Login = () => {
     }
   };
 
-
-
   return (
     <div className={styles.container}>
       <h2>Bejelentkezés</h2>

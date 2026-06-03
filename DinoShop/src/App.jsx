@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import DinoForm from './components/DinoForm'
 import DinoList from './components/DinoList'
@@ -10,16 +10,17 @@ import { AuthProvider } from './context/loginContext';
 function App() {
   const [DinoData, setDinoData] = useState([]);
 
-    const handleDinoData = (data) => {
+  const handleDinoData = (data) => {
     setDinoData((prevData) => [...prevData, data]);
-    getDinoData();
+  };
+
+  const deleteDino = (id) => {
+    setDinoData((prevData) => prevData.filter((dino) => dino.id !== id));
   };
 
   const getDinoData = async () => {
     try {
-      const response = await fetch('http://localhost:3000/dinos', {
-        
-      });
+      const response = await fetch('http://localhost:3000/products');
       if (response.ok) {
         const data = await response.json();
         setDinoData(data);
@@ -31,14 +32,17 @@ function App() {
     }
   };
 
+  useEffect(() => {
+    getDinoData();
+  }, []);
+
   return (
     <>
     <AuthProvider>
       <NavBar/>
       <Routes>
-        <Route path="/" element={<DinoList dinos={DinoData}/>} />
+        <Route path="/" element={<DinoList dinos={DinoData} deleteDino={deleteDino}/>} />
         <Route path='form' element={<DinoForm sendDataToApp={handleDinoData} />} />
-        {/* <Route path='form' element={<ProtectedRoute><DinoForm sendDataToApp={handleDinoData} /></ProtectedRoute>} /> */}
         <Route path='login' element={<Login />} />
       </Routes>
     </AuthProvider>
